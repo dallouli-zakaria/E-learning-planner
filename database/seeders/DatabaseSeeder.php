@@ -5,6 +5,7 @@ namespace Database\Seeders;
 
 use App\Models\User;
 use App\Models\Listing;
+use App\Models\Niveau;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
@@ -19,33 +20,32 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(5)->create();
 
+        $niv = Niveau::factory()->create([
+            'title' => '2CI ISI',
+        ]);
+
         $user = User::factory()->create([
-            'name' => 'John Doe',
-            'email' => 'john@gmail.com'
+            'name' => 'Admin Ad',
+            'email' => 'admin@test.com',
+            'niveau_id' => 1,
+            'role' => "Admin",
+            'password' => bcrypt('password')
+        ]);
+        $user = User::factory()->create([
+            'name' => 'Etudiant Ad',
+            'email' => 'student@test.com',
+            'niveau_id' => 1,
+            'role' => "Etudiant",
+            'password' => bcrypt('password')
+        ]);
+        $user = User::factory()->create([
+            'name' => 'Professor Ad',
+            'email' => 'prof@test.com',
+            'niveau_id' => 1,
+            'role' => "Professor",
+            'password' => bcrypt('password')
         ]);
 
-        Listing::factory(6)->create([
-            'user_id' => $user->id
-        ]);
-
-        // Listing::create([
-        //     'title' => 'Laravel Senior Developer', 
-        //     'tags' => 'laravel, javascript',
-        //     'company' => 'Acme Corp',
-        //     'location' => 'Boston, MA',
-        //     'email' => 'email1@email.com',
-        //     'website' => 'https://www.acme.com',
-        //     'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam minima et illo reprehenderit quas possimus voluptas repudiandae cum expedita, eveniet aliquid, quam illum quaerat consequatur! Expedita ab consectetur tenetur delensiti?'
-        // ]);
-
-        // Listing::create([
-        //     'title' => 'Full-Stack Engineer',
-        //     'tags' => 'laravel, backend ,api',
-        //     'company' => 'Stark Industries',
-        //     'location' => 'New York, NY',
-        //     'email' => 'email2@email.com',
-        //     'website' => 'https://www.starkindustries.com',
-        //     'description' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam minima et illo reprehenderit quas possimus voluptas repudiandae cum expedita, eveniet aliquid, quam illum quaerat consequatur! Expedita ab consectetur tenetur delensiti?'
-        //   ]);
+ 
     }
 }

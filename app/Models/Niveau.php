@@ -9,4 +9,8 @@ class Niveau extends Model
 {
     use HasFactory;
     protected $table = 'niveau';
+
+    protected $fillable = [
+        'title',
+    ];
 }

@@ -4,7 +4,7 @@
 
   <div class="z-10">
     <h1 class="text-6xl font-bold uppercase text-white">
-      <span class="text-white">I<span class="text-red-500">S</span>GA</span>
+      <span class="text-white">YONESTCOM</span>
     </h1>
     <p class="text-2xl text-gray-200 font-bold my-4">
         find sessions to join
